@@ -3,7 +3,8 @@ window.onload = function() {
         context = canvas.getContext("2d"),
         width = canvas.width = window.innerWidth,
         height = canvas.height = window.innerHeight;
-
+    
+    context.globalCompositeOperation = 'destination-over';
     context.translate(width/2,height/2);
     context.scale(1, -1);
 
@@ -19,7 +20,6 @@ window.onload = function() {
 
     function render(){
         for(let it=0;it<circles.length;it++) {
-            context.globalCompositeOperation = 'destination-over';
             circles[it].radius+=1;
             circles[it].draw();
         }
